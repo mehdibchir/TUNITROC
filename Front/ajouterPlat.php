@@ -12,11 +12,12 @@ if(
 ){
     $plat = new plat($_POST['Nomplat'],$_POST['descP'],$_POST['categorie'],$_POST['img']);
     $platC->ajouterPlat($plat);
+    header('Location: contact.php');
 }
 else
 {
 echo 'Erreur test';
-header('Location: conatct.php');
+header('Location: contact.php');
 }
 ?>
 

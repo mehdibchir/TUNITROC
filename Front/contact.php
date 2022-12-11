@@ -132,7 +132,7 @@
     
       <?php
 	include '../config.php';
-   $sql="SELECT * FROM categorie";
+    $sql="SELECT * FROM categorie";
 			$db = config::getConnexion();
 			try{
 				$liste = $db->query($sql);

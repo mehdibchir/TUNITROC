@@ -9,14 +9,13 @@ class plat
     private ?string $echange = null;
     private ?string $num = null;
 
-    public function __construct( $n, $p, $a, $d ,$c ,$x )
+    public function __construct( $n, $p, $a, $d )
     {
         $this->Nomplat= $n;
         $this->descP = $p;
         $this->categorie= $a;
         $this->img = $d;
-        $this->echange= $c;
-        $this->num = $x;
+      
     }
 
     /**
