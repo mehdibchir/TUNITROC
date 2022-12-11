@@ -38,7 +38,7 @@ include_once'../model/function.php';
           </a>
         </li>
         <li>
-          <a href="article.php">
+          <a href="../views/article.php">
             <i class="bx bx-box"></i>
             <span class="links_name">ARTICLE</span>
           </a>
