@@ -105,7 +105,7 @@
     <div class="header_top">
         <div class="container">
             <div class="row">
-                <div class="col-md-3">
+                <div class="col-md-9">
                     <ul class="contat_infoma">
                         <li>
 
@@ -140,14 +140,7 @@
                         </li>
                     </ul>
                 </div>
-                <div class="col-md-6">
-                    <ul class="social_icon_top text_align_center  ">
-                        <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
-                        <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
-                    </ul>
-                </div>
+
                 <div class="col-md-3">
                     <ul class="contat_infoma text_align_right">
                         <li>

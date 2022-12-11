@@ -97,7 +97,7 @@ class EventC
 
     function getEmailsAndNumbers($idEvent)
     {
-        $sql = "SELECT * from user where id in (select iduser from userevent where idevent=$idEvent);";
+        $sql = "SELECT * from utilisateurs where id in (select iduser from userevent where idevent=$idEvent);";
         $db = config::getConnexion();
         try {
             $liste = $db->query(
@@ -112,7 +112,6 @@ class EventC
 
 
     function afficherEvents($id,$dateD,$dateF,$words)
-
     {
 
         $dateD = $dateD!="" ? $dateD : "1950-01-01";
@@ -127,6 +126,7 @@ class EventC
             die('Erreur: ' . $e->getMessage());
         }
     }
+    
     function join($idevent,$iduser)
     {
         $sql = "INSERT INTO userevent (iduser,idevent) VALUES ($iduser,$idevent);";
@@ -137,6 +137,7 @@ class EventC
             die('Erreur: ' . $e->getMessage());
         }
     }
+    
     function unjoin($idevent,$iduser)
     {
         $sql = "DELETE FROM userevent WHERE iduser=$iduser and idevent=$idevent;";

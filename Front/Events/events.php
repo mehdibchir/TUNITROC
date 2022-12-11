@@ -48,8 +48,11 @@ $eventC = new EventC();
     $datef = isset($_GET["datef"]) ? $_GET["datef"] : "";
     $words = isset($_GET["words"])? $_GET["words"] : "";
     
-    
-$events = $eventC->afficherEvents(1, $dated, $datef, $words);
+if(isset($_SESSION['id'])){
+    $events = $eventC->afficherEvents($_SESSION['id'], $dated, $datef, $words);
+}else{
+    $events = $eventC->afficherEvents(1, $dated, $datef, $words);
+}
 
 
     
@@ -193,12 +196,18 @@ $events = array_slice($arr, $debut, $fin);
                                                                 echo  '<a href="javascript:void(0)"  style="cursor : not-allowed" class="btn btn-primary">Join</a>';
                                                             }else
                                                             {
-                                                                echo  '<a href="join.php?idevent='.$event["id"] .'&iduser=1 " class="btn btn-primary">Join</a>';
-                                  
+                                                                if(isset($_SESSION['id'])){
+                                                                    echo  '<a href="join.php?idevent='.$event["id"] .'&iduser='.$_SESSION["id"].'" class="btn btn-primary">Join</a>';
+                                                                }
+                                                                
                                                             }                       
                                                         }                                           
-                                                          else
-                                                            echo  '<a href="unjoin.php?idevent='.$event["id"] .'&iduser=1 "class="btn btn-primary">unjoin</a>';
+                                                          else{
+                                                            if(isset($_SESSION['id'])){
+                                                                echo  '<a href="unjoin.php?idevent='.$event["id"] .'&iduser='.$_SESSION["id"].'" class="btn btn-primary">Unjoin</a>';
+                                                            }
+                                                          }
+
 
                                                     ?>
 
