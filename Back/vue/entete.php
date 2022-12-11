@@ -70,7 +70,13 @@ include_once'../model/function.php';
         <li>
           <a href="utilisateurs.php">
             <i class="bx bx-user"></i>
-            <span class="links_name">Utilisateur</span>
+            <span class="links_name">Utilisateurs</span>
+          </a>
+        </li>
+        <li>
+          <a href="list-events.php">
+            <i class="bx bx-user"></i>
+            <span class="links_name">Evenements</span>
           </a>
         </li>
         <!-- <li>
