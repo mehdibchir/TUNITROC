@@ -190,16 +190,14 @@
                                             <a class="nav-link" href="../Events/events.php?page=1">Evenements    </a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="about.html">info</a>
+                                            <a class="nav-link" href="../project.php">Articles</a>
                                         </li>
-                                        <li class="nav-item">
-                                            <a class="nav-link" href="project.html">project</a>
-                                        </li>
+                                        
                                         <li class="nav-item">
                                             <a class="nav-link" href="staff.html">staff</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a class="nav-link" href="contact.html">ajoutez un produit</a>
+                                            <a class="nav-link" href="../contact.php">ajoutez un produit</a>
                                         </li>
 
 

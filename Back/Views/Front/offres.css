@@ -1,0 +1,459 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+ /* .header {
+    min-height: 110vh;
+    width: 100%;
+    background-image:url(images/banner.jpg);
+    background-position: center;
+    background-size:cover;
+    position: relative;
+  } */
+  nav{
+      display: flex;
+      padding: -2% 2%;
+  justify-content: space-between;
+  align-items:center;
+  }
+  nav img{
+      width: 150px;
+  
+  }
+  .nav-links{
+      flex: 1;
+      text-align:left;
+  
+  }
+  .nav-links ul li{
+      list-style:none;
+      display: inline-block;
+      padding: 8px 12px;
+      position: relative;
+  }
+  .nav-links ul li a{
+    color: #FE7062;
+    text-decoration:none;
+    font-size: 20px;
+  }
+  .nav-links ul li::after{
+  content:'';
+  width: 0%;
+  height: 2px;
+  background: #220CB6;
+  display:block;
+  margin: auto;
+  transition: 0.5s;
+  }
+  .nav-links ul li:hover::after{
+    width: 100%;
+  }
+  
+  @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+  span{
+    position: relative;
+    left: 1300px;
+    top:-110px;
+    display: inline-flex;
+    width: 180px;
+    height: 55px;
+    margin: 0 15px;
+    perspective: 1000px;
+  }
+  span a{
+    font-size: 19px;
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform .25s;
+    font-family: 'Montserrat', sans-serif;
+    
+  }
+  span a:before,
+  span a:after{
+    position: absolute;
+    content: "EDUCAPLAY";
+    height: 55px;
+    width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 5px solid #f44336;
+    box-sizing: border-box;
+    border-radius: 5px;
+  }
+  span a:before{
+    color: #fff;
+    background: #f44336;
+    transform: rotateY(0deg) translateZ(25px);
+  }
+  span a:after{
+    color: #f44336;
+    transform: rotateX(90deg) translateZ(25px);
+  }
+  span a:hover{
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
+  
+  .text-box{
+    width: 90%;
+    color: #220CB6;
+    position: absolute;
+    top: 55%;
+    left: 53%;
+    transform: translate(-50%,-50%);
+    text-align:left;
+  }
+  .text-box h1{
+    font-size: 62px;
+  }
+  .hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color:#fff;
+    border: 1px solid #fff;
+    padding: 12px 34px;
+    font-size: 13px;
+    background: transparent;
+    position: relative;
+    cursor:pointer;
+  }
+  .hero-btn:hover{
+    border: 1px solid #f44336;
+    background: #f44336;
+    transition: 1s;
+  }
+  nav .fa{
+    display: none;
+  }
+  @media(max-width: 600px){
+    .header {
+      position:absolute;
+      width: 420px;
+    }
+    .text-box h1{ 
+        font-size: 20px;
+     }
+     .nav-links ul li{
+        display: block;
+     }
+     .nav-links{
+        position: absolute;
+        background: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+     }
+     nav .fa{
+       display: block;
+       color:#fff;
+       margin:10px;
+       font-size:22px;
+       cursor:pointer;
+     }
+     .nav-links ul{
+       padding: 30px;
+     }
+  }
+  
+  
+  /*---------- formation-----------*/
+  .formation{
+    width: 80%;
+    margin:auto;
+    text-align:center;
+    padding-top: 100px;
+  }
+  .row{
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+  
+  }
+  .formation h1{
+    font-size: 36px;
+    font-weight: 600;
+    color:#f44336;
+  }
+  .formation p{
+    color: #777;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 22px;
+    padding: 10px;
+  }
+  
+  .formation-col{
+    flex-basis: 32%;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    position:relative;
+    overflow:hidden;
+  }
+  .formation-col img{
+  width: 100%;
+  display: flex;
+  
+  }
+  
+  .layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.5s;
+  }
+  .layer:hover{
+    background: rgba(226, 102, 0, 0.7);
+  }
+  
+  .layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 26px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .layer:hover h3{
+    bottom: 49%;
+    opacity: 1;
+  }
+
+  .layer h4{
+    width: 100%;
+    font-weight: 500;
+    color: #fff;
+    font-size: 24px;
+    bottom: 0;
+    left: 60%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+  }
+  .layer:hover h4{
+    bottom: 30%;
+    opacity: 1;
+  }
+
+
+  /* Button */
+  .button-get {
+    background-color: #220CB6;
+    border-radius: 100px;
+    box-shadow: rgba(0, 68, 255, 0.2) 0 -25px 18px -14px inset,rgba(0, 89, 255, 0.15) 0 1px 2px,rgba(0, 2, 109, 0.15) 0 2px 4px,rgba(55, 0, 255, 0.15) 0 4px 8px,rgba(55, 0, 255, 0.15) 0 8px 16px,rgba(5, 2, 172, 0.15) 0 16px 32px;
+    color: white ;
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 14px 50px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    position: relative;
+    top:500px;
+    left: 140px;
+  }
+  
+  .button-get:hover {
+    box-shadow: rgba(58, 46, 221, 0.35) 0 -25px 18px -14px inset,rgba(23, 36, 160, 0.25) 0 1px 2px,rgba(44, 41, 236, 0.25) 0 2px 4px,rgba(48, 10, 216, 0.25) 0 4px 8px,rgba(70, 8, 238, 0.25) 0 8px 16px,rgba(0, 17, 255, 0.25) 0 16px 32px;
+    transform: scale(1.05) rotate(-1deg);
+  }
+  
+  /* The footer is fixed to the bottom of the page */
+  
+  footer{
+      position: fixed;
+      bottom: 0;
+  }
+  
+  @media (max-height:800px){
+      footer { position: static; }
+      header { padding-top:40px; }
+  }
+  
+  
+  .footer-distributed{
+      background-color: #220CB6;
+      box-sizing: border-box;
+      width: 100%;
+      text-align: left;
+      font: bold 16px sans-serif;
+      padding: 50px 50px 60px 50px;
+      margin-top: 80px;
+  }
+  
+  .footer-distributed .footer-left,
+  .footer-distributed .footer-center,
+  .footer-distributed .footer-right{
+      display: inline-block;
+      vertical-align: top;
+  }
+  
+  /* Footer left */
+  
+  .footer-distributed .footer-left{
+      width: 30%;
+  }
+  
+  .footer-distributed h3{
+      color:  #ffffff;
+      font: normal 36px 'Cookie', cursive;
+      margin: 0;
+  }
+  
+  /* The company logo */
+  
+  .footer-distributed .footer-left img{
+      width: 30%;
+  }
+  
+  .footer-distributed h3 span{
+      color:  #e0ac1c;
+  }
+  
+  /* Footer links */
+  
+  .footer-distributed .footer-links{
+      color:  #ffffff;
+      margin: 20px 0 12px;
+  }
+  
+  .footer-distributed .footer-links a{
+      display:inline-block;
+      line-height: 1.8;
+      text-decoration: none;
+      color:  inherit;
+  }
+  
+  .footer-distributed .footer-company-name{
+      color:  #8f9296;
+      font-size: 14px;
+      font-weight: normal;
+      margin: 0;
+  }
+  
+  /* Footer Center */
+  
+  .footer-distributed .footer-center{
+      width: 35%;
+  }
+  
+  .footer-distributed .footer-center i{
+      background-color:  #33383b;
+      color: #ffffff;
+      font-size: 25px;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 42px;
+      margin: 10px 15px;
+      vertical-align: middle;
+  }
+  
+  .footer-distributed .footer-center i.fa-envelope{
+      font-size: 17px;
+      line-height: 38px;
+  }
+  
+  .footer-distributed .footer-center p{
+      display: inline-block;
+      color: #ffffff;
+      vertical-align: middle;
+      margin:0;
+  }
+  
+  .footer-distributed .footer-center p span{
+      display:block;
+      font-weight: normal;
+      font-size:14px;
+      line-height:2;
+  }
+  
+  .footer-distributed .footer-center p a{
+      color:  #e0ac1c;
+      text-decoration: none;;
+  }
+  
+  
+  /* Footer Right */
+  
+  .footer-distributed .footer-right{
+      width: 30%;
+  }
+  
+  .footer-distributed .footer-company-about{
+      line-height: 20px;
+      color:  #92999f;
+      font-size: 13px;
+      font-weight: normal;
+      margin: 0;
+  }
+  
+  .footer-distributed .footer-company-about span{
+      display: block;
+      color:  #ffffff;
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 20px;
+  }
+  
+  .footer-distributed .footer-icons{
+      margin-top: 25px;
+  }
+  
+  .footer-distributed .footer-icons a{
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      cursor: pointer;
+      background-color:  #33383b;
+      border-radius: 2px;
+  
+      font-size: 20px;
+      color: #ffffff;
+      text-align: center;
+      line-height: 35px;
+  
+      margin-right: 3px;
+      margin-bottom: 5px;
+  }
+  
+  /* Here is the code for Responsive Footer */
+  /* You can remove below code if you don't want Footer to be responsive */
+  
+  
+  @media (max-width: 880px) {
+  
+      .footer-distributed .footer-left,
+      .footer-distributed .footer-center,
+      .footer-distributed .footer-right{
+          display: block;
+          width: 100%;
+          margin-bottom: 40px;
+          text-align: center;
+      }
+  
+      .footer-distributed .footer-center i{
+          margin-left: 0;
+      }
+  
+  }
+  

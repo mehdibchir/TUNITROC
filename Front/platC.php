@@ -38,7 +38,7 @@
 				 'categorie'=> $plat->getcategorie(),
                  'img'=> $plat->getimg()
              ]);
-             header("Location: ../Views/formAjoutPlat.php");
+            // header("Location: ../Views/formAjoutPlat.php");
      } catch (PDOExeption $e){
          $e->getMessage();
      }
