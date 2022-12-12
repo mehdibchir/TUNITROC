@@ -7,7 +7,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>rhino</title>
+      <title>TUNITROC</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -57,7 +57,7 @@
                      </div>
                      <div class="col-md-3">
                         <ul class="contat_infoma text_align_right">
-                           <li><a href="Javascript:void(0)"> <i class="fa fa-phone" aria-hidden="true"></i> demo@gmail.com</a></li>
+                           <li><a href="Javascript:void(0)"> <i class="fa fa-phone" aria-hidden="true"></i> mehdi.bchir@esprit.tn</a></li>
                         </ul>
                      </div>
                   </div>
@@ -84,20 +84,20 @@
                                  </button>
                                  <div class="collapse navbar-collapse" id="navbarsExample04">
                                     <ul class="navbar-nav mr-auto">
-                                       <li class="nav-item">
-                                          <a class="nav-link" href="index.html">acceuil</a>
-                                       </li>
-                                       <li class="nav-item active">
-                                          <a class="nav-link" href="about.html">info</a>
+                                       <li class="nav-item ">
+                                          <a class="nav-link" href="index.html">Home</a>
                                        </li>
                                        <li class="nav-item">
-                                          <a class="nav-link" href="project.html">project</a>
+                                          <a class="nav-link" href="about.html">About</a>
+                                       </li>
+                                       <li class="nav-item">
+                                          <a class="nav-link" href="project.php">project</a>
                                        </li>
                                        <li class="nav-item">
                                           <a class="nav-link" href="staff.html">staff</a>
                                        </li>
-                                       <li class="nav-item">
-                                          <a class="nav-link" href="contact.php">Contact Us</a>
+                                       <li class="nav-item active">
+                                          <a class="nav-link" href="contact.html">ajoutez un produit</a>
                                        </li>
                                     </ul>
                                  </div>
@@ -116,40 +116,150 @@
          <!-- end header -->
          <!-- banner -->
       </header>
-      <!-- end banner -->
       <div class="back_re">
          <div class="container">
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                     <h2>info</h2>
+                     <h2>ajoutez un produit</h2>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- about -->
-      <div class="about">
-         <div class="container-fluid">
-            <div class="row d_flex">
-               <div class="col-md-7">
-                  <div class="titlepage">
-                     <h2>Pourquoi choisir TUNITROC ?</h2>
-                     <span>Notre plateforme s'inscrit dans une philosophie d'entraide, de partage et de solidarité et a pour objectif de créer une chaîne humaine capable de donner un sens éthique et une utilité sociale à l'acte d'achat en contribuant à promouvoir une consommation plus responsable.
+      <!--  contact -->
+    
+    
+      <?php
+	include '../config.php';
+   $sql="SELECT * FROM categorie";
+			$db = config::getConnexion();
+			try{
+				$liste = $db->query($sql);
+			}
+			catch(Exception $e){
+				die('Erreur:'. $e->getMessage());
+			}
+           
+?>
 
-                        Vous pouvez échanger des livres, troquer une maison pendant les vacances, trouver votre matériel de sport en seulement quelques clics, adopter un animal, proposer un service de jardinage, changer votre voiture, trouver un coup de main sans avoir besoin d’argent.</span>
-                     <a class="read_more" href="Javascript:void(0)"> s'inscrire</a>
-                  </div>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <title>
+    Material Dashboard 2 by Creative Tim
+  </title>
+  <!--     Fonts and icons     -->
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900|Roboto+Slab:400,700" />
+  <!-- Nucleo Icons -->
+  <link href="assets/css/nucleo-icons.css" rel="stylesheet" />
+  <link href="assets/css/nucleo-svg.css" rel="stylesheet" />
+  <!-- Font Awesome Icons -->
+  <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet">
+  <!-- CSS Files -->
+  <link id="pagestyle" href="assets/css/material-dashboard.css?v=3.0.0" rel="stylesheet" />
+</head>
+    <body>
+       
+        <hr>
+
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle">
+                    <ion-icon name="menu-outline"></ion-icon>
+                </div>
+
+                <div class="details">
+                    
+                        <div class="cardheader">
+                       <!--   <center>  <h1>Ajouter un artcile</h1></center>-->
+                           </div>   
+
+        <form action="ajouterPlat.php" method="post">
+            <div class="home-section4">
+            <table border="5" align="center">
+                <tr>
+                    <td>
+                        <label for="Nomplat">Nom article:
+                        </label>
+                    </td>
+                    <td><input type="text" name="Nomplat" id="Nomplat" minlength="3" maxlength="20" placeholder="nom article"required></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="descP">Description:
+                        </label>
+                    </td>
+                    <td><textarea type="text" name="descP" id="descP" minlength="5" placeholder="description de l'article" required ></textarea></td>
+                </tr>
+               
+                <tr>
+                    <td>
+                        <label for="categorie">Les categories:
+                        </label>
+                    </td>
+                    <td>
+                        <select name="categorie" id="categorie">
+                        <?php
+                         foreach($liste as $categorie) {
+                        ?>
+                                <option value="<?php echo $categorie['nom'] ?>"><?php echo $categorie['nom'] ?>  </option>
+                                     <?php }  ?>
+                    </select>;  
+                    </td>
+                </tr> 
+               
+               
+                <tr>
+                    <td>
+                        <label for="img">Image:
+                        </label>
+                    </td>
+                    <td><input type="file" name="img" id="img" maxlength="20" required></td>
+                </tr>       
+                <tr>
+                    <td></td>
+                    <td>
+                    
+                        <input type="submit" class="btn" value="Envoyer"> 
+                    </td>
+                    <td>
+                        <input type="reset" class="btn" value="Annuler" >
+                    </td>
+                </tr>
+            </table>
+            </div>
+        </form>
+    </body>
+</html>
+    
+      <div class="contact">
+         <div class="container">
+            <div class="row">
+               <div class="col-md-6 padding_right0">
+                  <form id="request" class="main_form">
+                     <div class="row">
+                 
+                        <div class="col-md-12 ">
+                  
+    
                </div>
-               <div class="col-md-5">
-                  <div class="about_img">
-                     <figure><img src="images/about.png" alt="#"/></figure>
+               <div class="col-md-6 padding_left0">
+                  <div class="map_main">
+                     <div class="map-responsive">
+                       <!-- <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyA0s1a7phLN0iaD6-UE7m4qP-z21pH0eSc&amp;q=Eiffel+Tower+Paris+France" width="600" height="463" frameborder="0" style="border:0; width: 100%;" allowfullscreen=""></iframe>-->
+                     </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- end about -->
+      <!-- end contact -->
       <!--  footer -->
       <footer>
          <div class="footer">
@@ -166,9 +276,9 @@
                      <ul class="link_menu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html"> About</a></li>
-                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="project.php">liste des articles</a></li>
                         <li><a href="staff.html">Staff</a></li>
-                        <li><a href="contact.php">Contact Us</a></li>
+                        <li><a href="contact.html">ajoutez un produit</a></li>
                      </ul>
                   </div>
                   <div class=" col-lg-3 col-md-6">

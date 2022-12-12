@@ -1,6 +1,6 @@
 <?php
-include 'connexion1.php';
-var_dump($_POST);
+	include '../config.php';
+  var_dump($_POST);
 
 
       echo"mmmmm";

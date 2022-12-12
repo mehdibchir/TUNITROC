@@ -1,4 +1,35 @@
+<?php
+include 'platC.php';
+$platC=new PlatC();
+
+$sql="SELECT * FROM categorie";
+        $db = config::getConnexion();
+        try{
+            $liste = $db->query($sql);
+        }
+        catch(Exception $e){
+            die('Erreur:'. $e->getMessage());
+        }
+        
+?>
+
 <!DOCTYPE html>
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+</style>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -7,7 +38,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>rhino</title>
+      <title>TUNITROC</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -84,20 +115,20 @@
                                  </button>
                                  <div class="collapse navbar-collapse" id="navbarsExample04">
                                     <ul class="navbar-nav mr-auto">
+                                       <li class="nav-item ">
+                                          <a class="nav-link" href="index.html">Home</a>
+                                       </li>
                                        <li class="nav-item">
-                                          <a class="nav-link" href="index.html">acceuil</a>
+                                          <a class="nav-link" href="about.html">About</a>
                                        </li>
                                        <li class="nav-item active">
-                                          <a class="nav-link" href="about.html">info</a>
-                                       </li>
-                                       <li class="nav-item">
-                                          <a class="nav-link" href="project.html">project</a>
+                                          <a class="nav-link" href="project.php">liste des articles</a>
                                        </li>
                                        <li class="nav-item">
                                           <a class="nav-link" href="staff.html">staff</a>
                                        </li>
                                        <li class="nav-item">
-                                          <a class="nav-link" href="contact.php">Contact Us</a>
+                                          <a class="nav-link" href="contact.php">ajouter un aricle</a>
                                        </li>
                                     </ul>
                                  </div>
@@ -122,34 +153,64 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                     <h2>info</h2>
+                     <h2>troquer</h2>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- about -->
-      <div class="about">
-         <div class="container-fluid">
-            <div class="row d_flex">
-               <div class="col-md-7">
-                  <div class="titlepage">
-                     <h2>Pourquoi choisir TUNITROC ?</h2>
-                     <span>Notre plateforme s'inscrit dans une philosophie d'entraide, de partage et de solidarité et a pour objectif de créer une chaîne humaine capable de donner un sens éthique et une utilité sociale à l'acte d'achat en contribuant à promouvoir une consommation plus responsable.
+      <!-- projects -->
+ 
+      <form action="echange.php" method="POST">
+        <?php
+			if (isset($_POST['id_plat'])){
+				$plat =$platC->recupererPlat($_POST['id_plat']);
+				
+		?>
+          <center>  <table border="5" align="center"></center>
+            <div class="home-section6">
+            
+         <figure><img src="img/<?php echo $plat['img']; ?>"   height="450" width="300"alt="#"/></figure>
+             
+         <h1 style="background-color:Orange;"> id: <?php echo $plat['id_plat']; ?></h1>
+          <br>
+          <h1 style="background-color:Tomato;"> nom article:   <?php echo $plat['Nomplat']; ?></h1>
+               <br>
+               <h1 style="background-color:Gray;"> categorie:   <?php echo $plat['categorie']; ?></h1>
+              <br>
+              <h1 style="background-color:LightGray;">  description:  <?php echo $plat['descP']; ?></h1>
+               
+               
+              <h1 style="border: 2px solid Tomato;">
+                        <label for="descP">Description de l'article pour faire l'echange:
+                        </label>
+                    
+                    <textarea type="text" name="echange" id="echange" minlength="5" placeholder="description de l'article " required ></textarea></h1>
 
-                        Vous pouvez échanger des livres, troquer une maison pendant les vacances, trouver votre matériel de sport en seulement quelques clics, adopter un animal, proposer un service de jardinage, changer votre voiture, trouver un coup de main sans avoir besoin d’argent.</span>
-                     <a class="read_more" href="Javascript:void(0)"> s'inscrire</a>
-                  </div>
-               </div>
-               <div class="col-md-5">
-                  <div class="about_img">
-                     <figure><img src="images/about.png" alt="#"/></figure>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!-- end about -->
+<h1 style="border: 2px solid DodgerBlue;">      <label for="Nomplat">Numero de telephone:
+                        </label>
+                    
+                    <input type="int" name="Num" id="Num" minlength="8" maxlength="8" placeholder="numéro"required></h1>
+
+<td>
+                  
+               
+              
+                    
+                    
+                    
+                    
+                    <button class="button button2"><a href="echange.php" >envoyer la demande de troque</a></button>
+                    
+            
+                </div>
+            </table>
+            <?php
+		}
+		?>
+        </form>
+   
+      <!-- end projects -->
       <!--  footer -->
       <footer>
          <div class="footer">
@@ -166,7 +227,7 @@
                      <ul class="link_menu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html"> About</a></li>
-                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="project.php">liste des articles</a></li>
                         <li><a href="staff.html">Staff</a></li>
                         <li><a href="contact.php">Contact Us</a></li>
                      </ul>

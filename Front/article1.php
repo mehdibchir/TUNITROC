@@ -43,7 +43,7 @@
                      <ul class="link_menu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html"> About</a></li>
-                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="project.php">Projects</a></li>
                         <li><a href="staff.html">Staff</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
                      </ul>

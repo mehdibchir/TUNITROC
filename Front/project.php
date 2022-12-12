@@ -1,4 +1,33 @@
+<?php
+include_once 'plat.php';
+include_once 'platC.php';
+
+$platC = new platC();
+$liste = $platC->afficherPlat();
+//$liste=$platC->afficherPlaat();
+
+
+?>
+
+
+
 <!DOCTYPE html>
+<style>
+.button {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.button1 {background-color: #4CAF50;} /* Green */
+.button2 {background-color: #1d4851;} /* Blue */
+</style>
 <html lang="en">
    <head>
       <meta charset="utf-8">
@@ -7,7 +36,7 @@
       <meta name="viewport" content="width=device-width, initial-scale=1">
       <meta name="viewport" content="initial-scale=1, maximum-scale=1">
       <!-- site metas -->
-      <title>rhino</title>
+      <title>TUNITROC</title>
       <meta name="keywords" content="">
       <meta name="description" content="">
       <meta name="author" content="">
@@ -84,20 +113,20 @@
                                  </button>
                                  <div class="collapse navbar-collapse" id="navbarsExample04">
                                     <ul class="navbar-nav mr-auto">
+                                       <li class="nav-item ">
+                                          <a class="nav-link" href="index.html">Home</a>
+                                       </li>
                                        <li class="nav-item">
-                                          <a class="nav-link" href="index.html">acceuil</a>
+                                          <a class="nav-link" href="about.html">About</a>
                                        </li>
                                        <li class="nav-item active">
-                                          <a class="nav-link" href="about.html">info</a>
-                                       </li>
-                                       <li class="nav-item">
-                                          <a class="nav-link" href="project.html">project</a>
+                                          <a class="nav-link" href="project.php">liste des articles</a>
                                        </li>
                                        <li class="nav-item">
                                           <a class="nav-link" href="staff.html">staff</a>
                                        </li>
                                        <li class="nav-item">
-                                          <a class="nav-link" href="contact.php">Contact Us</a>
+                                          <a class="nav-link" href="contact.php">ajouter un article</a>
                                        </li>
                                     </ul>
                                  </div>
@@ -122,34 +151,86 @@
             <div class="row">
                <div class="col-md-12">
                   <div class="title">
-                     <h2>info</h2>
+                     <h2>liste des articles</h2>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- about -->
-      <div class="about">
-         <div class="container-fluid">
-            <div class="row d_flex">
-               <div class="col-md-7">
-                  <div class="titlepage">
-                     <h2>Pourquoi choisir TUNITROC ?</h2>
-                     <span>Notre plateforme s'inscrit dans une philosophie d'entraide, de partage et de solidarité et a pour objectif de créer une chaîne humaine capable de donner un sens éthique et une utilité sociale à l'acte d'achat en contribuant à promouvoir une consommation plus responsable.
+      <!-- projects -->
 
-                        Vous pouvez échanger des livres, troquer une maison pendant les vacances, trouver votre matériel de sport en seulement quelques clics, adopter un animal, proposer un service de jardinage, changer votre voiture, trouver un coup de main sans avoir besoin d’argent.</span>
-                     <a class="read_more" href="Javascript:void(0)"> s'inscrire</a>
+      
+   
+      <div class="projects">
+         <div class="container-fluid">
+            <div class="row">
+               <div class="col-md-12">
+                  <div class="titlepage">
+                   
                   </div>
                </div>
-               <div class="col-md-5">
-                  <div class="about_img">
-                     <figure><img src="images/about.png" alt="#"/></figure>
+            </div>
+
+
+ 
+            <div class="row">
+               <div class="col-md-12">
+                  <div id="proj" class="carousel slide projects_ban" data-ride="carousel">
+                     <ol class="carousel-indicators">
+                        <li data-target="#proj" data-slide-to="0" class="active"></li>
+                        <li data-target="#proj" data-slide-to="1"></li>
+                        <li data-target="#proj" data-slide-to="2"></li>
+                     </ol>
+
+                     <div class="carousel-inner">
+                        <div class="carousel-item active">
+                           <div class="container-fluid">
+                              <div class="carousel-caption relative3">
+                                 <div class="row">
+
+
+                              
+                                 <?php
+foreach ($liste as $plat) {
+?>
+                                    <div class="col-md-4">
+                                       <div class="project">
+                                          <div class="project_img">
+                                             <figure><img src="img/<?php echo $plat['img']; ?>"   height="655" width="450"alt="#"/></figure>
+                                          </div>
+                                          <div id="pro_ho" class="project_text">
+                                             <h3><?php echo $plat['Nomplat']; ?> <br> categorie: <?php echo $plat['categorie']; ?> </h3>
+                                             <p> <?php echo $plat['descP']; ?></p>
+                                             
+
+                                             <form method="post" action="troquer.php">
+        <h2><center>  <input type="submit" class="button button2" name="troquer" value="troquer avec un autre produit">  </center></h2>
+          <input type="hidden" value=<?PHP echo $plat['id_plat']; ?> name="id_plat">
+        </form>
+                                          </div>
+                                       </div>
+                                    </div>
+                                  
+                                  <?php } ?>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#proj" role="button" data-slide="prev">
+                        <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                        <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#proj" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        <span class="sr-only">Next</span>
+                        </a>
+                     </div>
                   </div>
                </div>
             </div>
          </div>
       </div>
-      <!-- end about -->
+      <!-- end projects -->
       <!--  footer -->
       <footer>
          <div class="footer">
@@ -166,7 +247,7 @@
                      <ul class="link_menu">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="about.html"> About</a></li>
-                        <li><a href="project.html">Projects</a></li>
+                        <li><a href="project.php">liste des articles</a></li>
                         <li><a href="staff.html">Staff</a></li>
                         <li><a href="contact.php">Contact Us</a></li>
                      </ul>
