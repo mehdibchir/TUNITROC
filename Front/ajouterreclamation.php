@@ -201,44 +201,12 @@ https://templatemo.com/tm-571-hexashop
                                                         <img src="assets/images/white-logo.png" alt="hexashop ecommerce templatemo">
                                                     </div>
                                                     <ul>
-                                                        <li><a href="#">Petite Ariana, Tunisie</a></li>
-                                                        <li><a href="#">9achech@esprit.tn</a></li>
-                                                        <li><a href="#">+216 71 546 008</a></li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <h4>Shopping &amp; Categories</h4>
-                                                <ul>
-                                                    <li><a href="homme.html">Homme</a></li>
-                                                    <li><a href="femme.html">Femme</a></li>
-                                                    <li><a href="enfant.html">Enfant</a></li>
-                                                    <li><a href="bebe.html">Bébé</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <h4>Liens Utiles</h4>
-                                                <ul>
-                                                    <li><a href="index.html">Acceuil</a></li>
-                                                    <li><a href="#">A propos de <i>Rinho</i></a></li>
-                                                    <li><a href="#">Aide</a></li>
-                                                    <li><a href="#">Contact</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-lg-3">
-                                                <h4>Help &amp; Information</h4>
-                                                <ul>
-                                                    <li><a href="inscription.html">S'inscrire</a></li>
-                                                    <li><a href="ajouterreclamation.html">Reclamation</a></li>
-                                                    <li><a href="evenement.html">Evénements</a></li>
-                                                    <li><a href="livraison.html">Livraison</a></li>
-                                                </ul>
-                                            </div>
+                                                       
                                             <div class="col-lg-12">
                                                 <div class="under-footer">
-                                                    <p>Copyright © 2022 9achech Co., Ltd. All Rights Reserved. 
+                                                     
                                                     
-                                                    <br>Design: <a href="https://templatemo.com" target="_parent" title="free css templates">TemplateMo</a></p>
+                                                    
                                                     <ul>
                                                         <li><a href="#"><i class="fa fa-facebook"></i></a></li>
                                                         <li><a href="#"><i class="fa fa-twitter"></i></a></li>
