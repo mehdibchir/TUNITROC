@@ -197,6 +197,10 @@
                                             <a class="nav-link" href="staff.html">staff</a>
                                         </li>
                                         <li class="nav-item">
+                                            <a class="nav-link" href="../ajouterlivraison.php">livraison</a>
+                                        </li>
+                                        
+                                        <li class="nav-item">
                                             <a class="nav-link" href="../consulterreclamation.php">Reclamation</a>
                                         </li>
                                     
