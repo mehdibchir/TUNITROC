@@ -38,6 +38,18 @@ include_once'../model/function.php';
           </a>
         </li>
         <li>
+          <a href="../consulterreclamation.php">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Reclamation</span>
+          </a>
+        </li>
+        <li>
+        <a href="../consulterreponse.php">
+            <i class="bx bx-grid-alt"></i>
+            <span class="links_name">Reponse</span>
+          </a>
+        </li>
+        <li>
           <a href="../views/article.php">
             <i class="bx bx-box"></i>
             <span class="links_name">ARTICLE</span>
