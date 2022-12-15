@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Hôte : 127.0.0.1
--- Généré le : jeu. 15 déc. 2022 à 01:09
--- Version du serveur : 10.4.22-MariaDB
--- Version de PHP : 8.1.2
+-- Host: 127.0.0.1
+-- Generation Time: Dec 15, 2022 at 01:41 AM
+-- Server version: 10.4.24-MariaDB
+-- PHP Version: 7.4.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `tunitroc_db`
+-- Database: `tunitroc_db`
 --
 
 -- --------------------------------------------------------
 
 --
--- Structure de la table `article`
+-- Table structure for table `article`
 --
 
 CREATE TABLE `article` (
@@ -41,7 +41,7 @@ CREATE TABLE `article` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `categorie`
+-- Table structure for table `categorie`
 --
 
 CREATE TABLE `categorie` (
@@ -51,7 +51,7 @@ CREATE TABLE `categorie` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `categorie`
+-- Dumping data for table `categorie`
 --
 
 INSERT INTO `categorie` (`id_cat`, `nom`, `descr`) VALUES
@@ -64,7 +64,7 @@ INSERT INTO `categorie` (`id_cat`, `nom`, `descr`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `event`
+-- Table structure for table `event`
 --
 
 CREATE TABLE `event` (
@@ -77,7 +77,7 @@ CREATE TABLE `event` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `event`
+-- Dumping data for table `event`
 --
 
 INSERT INTO `event` (`id`, `title`, `description`, `image`, `date`, `nb`) VALUES
@@ -87,7 +87,43 @@ INSERT INTO `event` (`id`, `title`, `description`, `image`, `date`, `nb`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `message`
+-- Table structure for table `livraison`
+--
+
+CREATE TABLE `livraison` (
+  `IdLivraison` int(11) NOT NULL,
+  `NomLivraison` varchar(255) NOT NULL,
+  `dateLivraison` date NOT NULL,
+  `telephone` int(11) NOT NULL,
+  `adresse` varchar(55) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `livraison`
+--
+
+INSERT INTO `livraison` (`IdLivraison`, `NomLivraison`, `dateLivraison`, `telephone`, `adresse`) VALUES
+(1, 'liv1', '2022-12-01', 2022, '111'),
+(3, 'liv2', '2022-12-08', 55123456, 'kelibia'),
+(4, 'test liv', '2022-12-01', 145566, 'kelibia'),
+(5, 'livraison livraison', '2022-12-01', 1111, 'kelibia'),
+(6, 'done livraison', '2022-12-01', 1111, 'kelibia'),
+(7, 'liiiiv', '2022-12-01', 202233, 'nabeul'),
+(8, 'aaa', '2022-12-17', 145566, 'tunis'),
+(9, 'gsd', '2022-12-16', 21233, 'aaaaaa'),
+(10, 'xyz', '2022-12-18', 21233, 'aaaaaa'),
+(11, 'abc', '2022-12-02', 145566, 'aa'),
+(12, 'livraison tekhdem', '2022-12-09', 111100, 'kelibia'),
+(13, 'yesss', '2022-12-09', 111100, 'kelibia'),
+(14, 'name', '2022-12-09', 111100, 'kelibia'),
+(15, 'a5fv', '2022-12-14', 21233, 'kelibia'),
+(18, '', '2022-12-29', 84512, 'swdfdghj'),
+(19, '', '2022-12-29', 84512, 'swdfdghj');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `message`
 --
 
 CREATE TABLE `message` (
@@ -101,7 +137,7 @@ CREATE TABLE `message` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `message`
+-- Dumping data for table `message`
 --
 
 INSERT INTO `message` (`id`, `sender`, `receiver`, `message`, `type`, `createdAt`, `reactionType`) VALUES
@@ -123,7 +159,7 @@ INSERT INTO `message` (`id`, `sender`, `receiver`, `message`, `type`, `createdAt
 -- --------------------------------------------------------
 
 --
--- Structure de la table `plat`
+-- Table structure for table `plat`
 --
 
 CREATE TABLE `plat` (
@@ -137,7 +173,7 @@ CREATE TABLE `plat` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `plat`
+-- Dumping data for table `plat`
 --
 
 INSERT INTO `plat` (`id_plat`, `Nomplat`, `descP`, `categorie`, `img`, `echange`, `num`) VALUES
@@ -162,7 +198,7 @@ INSERT INTO `plat` (`id_plat`, `Nomplat`, `descP`, `categorie`, `img`, `echange`
 -- --------------------------------------------------------
 
 --
--- Structure de la table `reclamation`
+-- Table structure for table `reclamation`
 --
 
 CREATE TABLE `reclamation` (
@@ -175,7 +211,7 @@ CREATE TABLE `reclamation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `reclamation`
+-- Dumping data for table `reclamation`
 --
 
 INSERT INTO `reclamation` (`id_reclamation`, `type`, `date_reclamation`, `description`, `sujet`, `status`) VALUES
@@ -186,7 +222,7 @@ INSERT INTO `reclamation` (`id_reclamation`, `type`, `date_reclamation`, `descri
 -- --------------------------------------------------------
 
 --
--- Structure de la table `reponse_reclamation`
+-- Table structure for table `reponse_reclamation`
 --
 
 CREATE TABLE `reponse_reclamation` (
@@ -199,7 +235,7 @@ CREATE TABLE `reponse_reclamation` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `reponse_reclamation`
+-- Dumping data for table `reponse_reclamation`
 --
 
 INSERT INTO `reponse_reclamation` (`id_reponse`, `date_reponse`, `description_reponse`, `mail_reponse`, `sujet_reponse`, `id_reclamation`) VALUES
@@ -208,7 +244,7 @@ INSERT INTO `reponse_reclamation` (`id_reponse`, `date_reponse`, `description_re
 -- --------------------------------------------------------
 
 --
--- Structure de la table `status`
+-- Table structure for table `status`
 --
 
 CREATE TABLE `status` (
@@ -219,7 +255,7 @@ CREATE TABLE `status` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `user`
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
@@ -230,7 +266,7 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id`, `nom`, `email`, `numero`) VALUES
@@ -239,7 +275,7 @@ INSERT INTO `user` (`id`, `nom`, `email`, `numero`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `userevent`
+-- Table structure for table `userevent`
 --
 
 CREATE TABLE `userevent` (
@@ -248,7 +284,7 @@ CREATE TABLE `userevent` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
--- Déchargement des données de la table `userevent`
+-- Dumping data for table `userevent`
 --
 
 INSERT INTO `userevent` (`idevent`, `iduser`) VALUES
@@ -258,7 +294,7 @@ INSERT INTO `userevent` (`idevent`, `iduser`) VALUES
 -- --------------------------------------------------------
 
 --
--- Structure de la table `utilisateurs`
+-- Table structure for table `utilisateurs`
 --
 
 CREATE TABLE `utilisateurs` (
@@ -275,7 +311,7 @@ CREATE TABLE `utilisateurs` (
 ) ENGINE=MyISAM DEFAULT CHARSET=latin1;
 
 --
--- Déchargement des données de la table `utilisateurs`
+-- Dumping data for table `utilisateurs`
 --
 
 INSERT INTO `utilisateurs` (`nom`, `prenom`, `email`, `password`, `telephone`, `sexe`, `role`, `image`, `id`, `connected`) VALUES
@@ -287,140 +323,152 @@ INSERT INTO `utilisateurs` (`nom`, `prenom`, `email`, `password`, `telephone`, `
 ('amdouni', 'erojla', 'erojla.amdouni@gmail.com', '$2y$10$00WS7OtdQ169OCyHB6ed3Op36tPLBjJIJ9eZrE5ROd07VCtw7yeW6', '12345678', 'homme', 'user', '842873_Capture d’écran 2022-12-07 144514.png', 17, 0);
 
 --
--- Index pour les tables déchargées
+-- Indexes for dumped tables
 --
 
 --
--- Index pour la table `article`
+-- Indexes for table `article`
 --
 ALTER TABLE `article`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `categorie`
+-- Indexes for table `categorie`
 --
 ALTER TABLE `categorie`
   ADD PRIMARY KEY (`id_cat`);
 
 --
--- Index pour la table `event`
+-- Indexes for table `event`
 --
 ALTER TABLE `event`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `message`
+-- Indexes for table `livraison`
+--
+ALTER TABLE `livraison`
+  ADD PRIMARY KEY (`IdLivraison`);
+
+--
+-- Indexes for table `message`
 --
 ALTER TABLE `message`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `plat`
+-- Indexes for table `plat`
 --
 ALTER TABLE `plat`
   ADD PRIMARY KEY (`id_plat`);
 
 --
--- Index pour la table `reclamation`
+-- Indexes for table `reclamation`
 --
 ALTER TABLE `reclamation`
   ADD PRIMARY KEY (`id_reclamation`);
 
 --
--- Index pour la table `reponse_reclamation`
+-- Indexes for table `reponse_reclamation`
 --
 ALTER TABLE `reponse_reclamation`
   ADD PRIMARY KEY (`id_reponse`),
   ADD KEY `id_reclamation` (`id_reclamation`);
 
 --
--- Index pour la table `status`
+-- Indexes for table `status`
 --
 ALTER TABLE `status`
   ADD PRIMARY KEY (`id_status`);
 
 --
--- Index pour la table `user`
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `userevent`
+-- Indexes for table `userevent`
 --
 ALTER TABLE `userevent`
   ADD KEY `idevent` (`idevent`,`iduser`);
 
 --
--- Index pour la table `utilisateurs`
+-- Indexes for table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT pour les tables déchargées
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT pour la table `article`
+-- AUTO_INCREMENT for table `article`
 --
 ALTER TABLE `article`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `categorie`
+-- AUTO_INCREMENT for table `categorie`
 --
 ALTER TABLE `categorie`
   MODIFY `id_cat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT pour la table `event`
+-- AUTO_INCREMENT for table `event`
 --
 ALTER TABLE `event`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
 
 --
--- AUTO_INCREMENT pour la table `message`
+-- AUTO_INCREMENT for table `livraison`
+--
+ALTER TABLE `livraison`
+  MODIFY `IdLivraison` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `message`
 --
 ALTER TABLE `message`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- AUTO_INCREMENT pour la table `plat`
+-- AUTO_INCREMENT for table `plat`
 --
 ALTER TABLE `plat`
   MODIFY `id_plat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
--- AUTO_INCREMENT pour la table `reclamation`
+-- AUTO_INCREMENT for table `reclamation`
 --
 ALTER TABLE `reclamation`
   MODIFY `id_reclamation` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
--- AUTO_INCREMENT pour la table `reponse_reclamation`
+-- AUTO_INCREMENT for table `reponse_reclamation`
 --
 ALTER TABLE `reponse_reclamation`
   MODIFY `id_reponse` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT pour la table `user`
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
--- AUTO_INCREMENT pour la table `utilisateurs`
+-- AUTO_INCREMENT for table `utilisateurs`
 --
 ALTER TABLE `utilisateurs`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
--- Contraintes pour les tables déchargées
+-- Constraints for dumped tables
 --
 
 --
--- Contraintes pour la table `reponse_reclamation`
+-- Constraints for table `reponse_reclamation`
 --
 ALTER TABLE `reponse_reclamation`
   ADD CONSTRAINT `reponse_reclamation_ibfk_1` FOREIGN KEY (`id_reclamation`) REFERENCES `reclamation` (`id_reclamation`);
